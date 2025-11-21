@@ -12,8 +12,8 @@
     .card{background:#fafafa;border-radius:10px;padding:14px;margin-bottom:14px;border:1px solid #e5e7eb}
     .row{display:flex;gap:12px;align-items:center}
     .mono{font-family:Menlo,Consolas,monospace;background:#f3f4f6;padding:10px;border-radius:8px;overflow:auto;color:#111;white-space:nowrap}
-    button.copybtn{background:#fff;border:1px solid #d1d5db;padding:8px 12px;border-radius:8px;cursor:pointer;color:#111}
-    button.copybtn:hover{background:#f9fafb}
+    button.copybtn,a.copybtn{background:#fff;border:1px solid #d1d5db;padding:8px 12px;border-radius:8px;cursor:pointer;color:#111;text-decoration:none;display:inline-block;text-align:center}
+    button.copybtn:hover,a.copybtn:hover{background:#f9fafb}
     .success{color:#059669;margin-left:8px;font-weight:600;font-size:13px}
     pre.codebox{white-space:nowrap;margin:8px 0;padding:12px;border-radius:8px;background:#f3f4f6;color:#111;overflow-x:auto}
     .hint{color:#666;font-size:13px;margin-top:6px}
@@ -28,22 +28,23 @@
 
     <div class="card">
       <strong>如何使用脚本</strong>
-      <div class="hint">方法一:代理原网站并注入脚本 方法二：使用篡改猴(Tampermonkey) 插件。 方法二：打开网站后在控制台粘贴指令（无需插件）。</div>
-    </div>
-
-        <div class="card">
-      <strong class="big">方法二：</strong>
-      <pre class="codebox mono" id="link1">a-1dv.pages.dev</pre>
-      <div style="display:flex;gap:10px;align-items:center;margin-top:6px;">
-        <button class="copybtn" data-copy="a-1dv.pages.dev">复制链接</button>
-        <span class="success" style="display:none">已复制</span>
-      </div>
-      <div class="hint">直接进入即可</div>
+      <div class="hint">方法一:代理原网站并注入脚本 方法二：使用篡改猴(Tampermonkey) 插件。 方法三：打开网站后在控制台粘贴指令（无需插件）。</div>
     </div>
 
     <div class="card">
       <strong class="big">方法一：</strong>
-      <pre class="codebox mono" id="link1">https://gh-proxy.org/https://github.com/89156/userjs/raw/refs/heads/main/user.js</pre>
+      <pre class="codebox mono" id="link1">a-1dv.pages.dev</pre>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:6px;">
+        <a href="https://a-1dv.pages.dev" target="_blank" class="copybtn">打开链接</a>
+        <a href="https://github.com/89156/userjs/blob/13019bf3181ea55834f60a6d516361688e4a4f28/%E6%96%B9%E6%B3%95%E4%B8%80%E7%9A%84workers%E6%BA%90%E7%A0%81" 
+           target="_blank" class="copybtn">查看源码</a>
+      </div>
+      <div class="hint">最简单的方法，但部分地区/运营商无法访问</div>
+    </div>
+
+    <div class="card">
+      <strong class="big">方法二：</strong>
+      <pre class="codebox mono" id="link2">https://gh-proxy.org/https://github.com/89156/userjs/raw/refs/heads/main/user.js</pre>
       <div style="display:flex;gap:10px;align-items:center;margin-top:6px;">
         <button class="copybtn" data-copy="https://gh-proxy.org/https://github.com/89156/userjs/raw/refs/heads/main/user.js">复制链接</button>
         <span class="success" style="display:none">已复制</span>
@@ -52,7 +53,7 @@
     </div>
     
     <div class="card">
-      <strong class="big">方法三：控制台指令</strong>
+      <strong class="big">方法三：</strong>
       <pre class="codebox mono" id="cmd">fetch("https://gh-proxy.org/https://raw.githubusercontent.com/89156/userjs/refs/heads/main/quiz_highlight.js").then(r=>r.text()).then(eval)</pre>
       <div style="display:flex;gap:10px;align-items:center;margin-top:6px;">
         <button class="copybtn" id="copy-run">复制指令</button>
@@ -61,6 +62,16 @@
       <div class="hint" style="margin-top:10px;">使用方法：进入小游戏页面 → 按 F12 或右键空白点击检查打开开发者工具 → 切换到 Console（控制台） → 粘贴以上指令并回车执行。</div>
     </div>
 
+    <!-- 新增 GitHub 按钮 -->
+    <div class="card" style="text-align:center;">
+      <strong class="big">访问 GitHub 仓库</strong>
+      <div style="margin-top:10px;">
+        <a href="https://github.com/89156/userjs" target="_blank" class="copybtn">打开 GitHub</a>
+      </div>
+      <div class="hint">查看或下载最新脚本</div>
+    </div>
+
+  </div>
 
   <script>
     function showMsg(btn){
