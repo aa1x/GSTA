@@ -73,7 +73,8 @@
       btn.blur();
     }
 
-    document.querySelectorAll('.copybtn').forEach(btn=>{
+    // 只对按钮类型的复制按钮绑定事件，排除链接类型的按钮
+    document.querySelectorAll('button.copybtn').forEach(btn=>{
       btn.addEventListener('click',async()=>{
         const text = btn.getAttribute('data-copy') || document.getElementById('cmd')?.textContent.trim();
         try{
